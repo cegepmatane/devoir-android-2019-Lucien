@@ -11,6 +11,6 @@ public class AjouterJoueur extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajouter_joueur);
+        setContentView(R.layout.vue_ajouter_joueur);
     }
 }
