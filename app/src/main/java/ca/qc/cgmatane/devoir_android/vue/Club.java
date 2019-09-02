@@ -1,4 +1,4 @@
-package ca.qc.cgmatane.devoir_android;
+package ca.qc.cgmatane.devoir_android.vue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import ca.qc.cgmatane.devoir_android.R;
 
 public class Club extends AppCompatActivity {
 
