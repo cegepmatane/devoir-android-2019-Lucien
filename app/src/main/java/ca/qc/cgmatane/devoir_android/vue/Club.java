@@ -15,6 +15,7 @@ import java.util.List;
 
 import ca.qc.cgmatane.devoir_android.R;
 import ca.qc.cgmatane.devoir_android.donnees.JoueurDAO;
+import ca.qc.cgmatane.devoir_android.modele.Joueur;
 
 public class Club extends AppCompatActivity {
 
@@ -52,7 +53,7 @@ public class Club extends AppCompatActivity {
 
         accesseurJoueur = JoueurDAO.getInstance();
 
-        listeJoueur = accesseurJoueur.recupererListeJoueur();
+        listeJoueur = accesseurJoueur.recupererListeJoueurPourAdapteur()    ;
 
         SimpleAdapter adapteurVueListeJoueur = new SimpleAdapter(
                 this,
