@@ -9,7 +9,18 @@
     <ListView
         android:id="@+id/vue_club_liste_joueur"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="285dp" />
+        android:layout_height="wrap_content"
+
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter un joueur"
+        app:layout_constraintTop_toBottomOf="@+id/vue_club_liste_joueur"
+
+        tools:layout_editor_absoluteX="0dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
