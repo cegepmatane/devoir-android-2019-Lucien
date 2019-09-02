@@ -9,10 +9,10 @@ import ca.qc.cgmatane.devoir_android.modele.Joueur;
 public class JoueurDAO {
 
     private static JoueurDAO instance = null;
-    protected List<Joueur> listeJoueur;
+    protected List<HashMap<String, String>> listeJoueur;
 
     public JoueurDAO() {
-        listeJoueur = new ArrayList<Joueur>();
+        listeJoueur = new ArrayList<HashMap<String, String>>();
         preparerListeJoueur();
     }
 
@@ -22,9 +22,7 @@ public class JoueurDAO {
         return instance;
     }
 
-    public List<HashMap<String, String>> preparerListeJoueur() {
-
-        List<HashMap<String, String>> listeJoueur = new ArrayList<HashMap<String, String>>();
+    private void preparerListeJoueur() {
 
         HashMap<String, String> joueur;
 
@@ -43,10 +41,9 @@ public class JoueurDAO {
         joueur.put("poste", "Pivot");
         listeJoueur.add(joueur);
 
-        return listeJoueur;
     }
 
-    public List<Joueur> recupererListeJoueur() {
+    public List<HashMap<String, String>> recupererListeJoueur() {
         return listeJoueur;
     }
 }

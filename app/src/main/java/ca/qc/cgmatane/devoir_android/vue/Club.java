@@ -28,7 +28,7 @@ public class Club extends AppCompatActivity {
 
         accesseurJoueur = JoueurDAO.getInstance();
 
-        listeJoueur = accesseurJoueur.preparerListeJoueur();
+        listeJoueur = accesseurJoueur.recupererListeJoueur();
 
         SimpleAdapter adapteurVueListeJoueur = new SimpleAdapter(
                 this,
