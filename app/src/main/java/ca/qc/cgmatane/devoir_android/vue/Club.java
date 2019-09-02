@@ -23,6 +23,10 @@ public class Club extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vue_club);
+        afficherToutLesJoueurs();
+    }
+
+    protected void afficherToutLesJoueurs() {
 
         vueListeJoueur = (ListView) findViewById(R.id.vue_club_liste_joueur);
 

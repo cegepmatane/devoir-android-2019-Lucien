@@ -14,7 +14,7 @@
         />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/vue_club_action_naviguer_ajouter_joueur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ajouter un joueur"
