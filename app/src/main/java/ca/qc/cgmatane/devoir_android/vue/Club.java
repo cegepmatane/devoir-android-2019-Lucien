@@ -47,6 +47,14 @@ public class Club extends AppCompatActivity {
         );
     }
 
+    protected void onActivityResult(int activite, int resultat, Intent donnees) {
+        switch (activite) {
+            case ACTIVITE_AJOUTER_JOUEUR:
+                afficherToutLesJoueurs();
+                break;
+        }
+    }
+
     protected void afficherToutLesJoueurs() {
 
         vueListeJoueur = (ListView) findViewById(R.id.vue_club_liste_joueur);
