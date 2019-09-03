@@ -35,6 +35,10 @@ public class JoueurDAO {
         return listeJoueurPourAdapteur;
     }
 
+    public void ajouterJoueur(Joueur joueur) {
+        listeJoueur.add(joueur);
+    }
+
     private void preparerListeJoueur() {
 
         Joueur joueur;
