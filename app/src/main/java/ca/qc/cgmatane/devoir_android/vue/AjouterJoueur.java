@@ -52,7 +52,7 @@ public class AjouterJoueur extends AppCompatActivity {
 
         accesseurJoueur.ajouterJoueur(new Joueur(vueAjouterJoueurChampNom.getText().toString(),
                 getVueAjouterJoueurChampPoste.getText().toString(),
-                "0"));
+                0));
 
         naviguerRetourClub();
     }

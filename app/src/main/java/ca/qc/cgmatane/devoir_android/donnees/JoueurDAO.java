@@ -43,9 +43,9 @@ public class JoueurDAO {
 
         Joueur joueur;
 
-        listeJoueur.add(new Joueur("George", "ailier", "1"));
-        listeJoueur.add(new Joueur("Gobert", "pivot", "2"));
-        listeJoueur.add(new Joueur("James", "arriere", "3"));
+        listeJoueur.add(new Joueur("George", "ailier", 1));
+        listeJoueur.add(new Joueur("Gobert", "pivot", 2));
+        listeJoueur.add(new Joueur("James", "arriere", 3));
     }
 
     public List<Joueur> recupererListeJoueur() {
