@@ -22,6 +22,7 @@ public class AjouterJoueur extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vue_ajouter_joueur);
 
@@ -42,6 +43,7 @@ public class AjouterJoueur extends AppCompatActivity {
     }
 
     private void enregistrerJoueur() {
+
         Toast message = Toast.makeText(getApplicationContext(),
                 "Nom " + vueAjouterJoueurChampNom.getText().toString(),
                 Toast.LENGTH_SHORT);

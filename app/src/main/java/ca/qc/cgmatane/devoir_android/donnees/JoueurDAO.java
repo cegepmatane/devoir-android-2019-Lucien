@@ -17,16 +17,18 @@ public class JoueurDAO {
     }
 
     public static JoueurDAO getInstance() {
+
         if (null == instance)
             instance = new JoueurDAO();
         return instance;
     }
 
     public List<HashMap<String,String>> recupererListeJoueurPourAdapteur() {
+
         List<HashMap<String,String>> listeJoueurPourAdapteur =
                 new ArrayList<HashMap<String, String>>();
 
-        //listerLivre()
+        //listerJoueur()
 
         for (Joueur joueur :
                 listeJoueur) {
@@ -35,20 +37,39 @@ public class JoueurDAO {
         return listeJoueurPourAdapteur;
     }
 
+    public Joueur chercherJoueurParId(int id_joueur) {
+
+        for (Joueur joueurRecherche :
+                this.listeJoueur) {
+            if (joueurRecherche.getId_joueur() == id_joueur)
+                return joueurRecherche;
+        }
+        return null;
+    }
+
+    public void modifierJoueur(Joueur joueur) {
+
+        for (Joueur joueurRecherche :
+                this.listeJoueur) {
+            if (joueurRecherche.getId_joueur() == joueur.getId_joueur()) {
+                joueurRecherche.setNom(joueur.getNom());
+                joueurRecherche.setPoste(joueur.getPoste());
+            }
+        }
+    }
+
+    public List<Joueur> recupererListeJoueur() {
+        return listeJoueur;
+    }
+
     public void ajouterJoueur(Joueur joueur) {
         listeJoueur.add(joueur);
     }
 
     private void preparerListeJoueur() {
 
-        Joueur joueur;
-
         listeJoueur.add(new Joueur("George", "ailier", 1));
         listeJoueur.add(new Joueur("Gobert", "pivot", 2));
         listeJoueur.add(new Joueur("James", "arriere", 3));
-    }
-
-    public List<Joueur> recupererListeJoueur() {
-        return listeJoueur;
     }
 }

@@ -56,6 +56,9 @@ public class Club extends AppCompatActivity {
             case ACTIVITE_AJOUTER_JOUEUR:
                 afficherToutLesJoueurs();
                 break;
+            case ACTIVITE_MODIFIER_JOUEUR:
+                afficherToutLesJoueurs();
+                break;
         }
     }
 
