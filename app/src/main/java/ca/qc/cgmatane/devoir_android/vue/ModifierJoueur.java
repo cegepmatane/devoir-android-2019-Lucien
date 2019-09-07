@@ -66,6 +66,8 @@ public class ModifierJoueur extends AppCompatActivity {
         joueur.setNom(vueModifierJoueurChampNom.getText().toString());
         joueur.setPoste(vueModifierJoueurChampPoste.getText().toString());
 
+        accesseurJoueur.modifierJoueur(joueur);
+
         naviguerRetourClub();
     }
 

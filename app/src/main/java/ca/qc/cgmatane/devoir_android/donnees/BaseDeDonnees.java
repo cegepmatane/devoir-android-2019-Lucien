@@ -30,7 +30,7 @@ public class BaseDeDonnees extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_TABLE = "create table joueur(id_joueur INTEGER PRIMARY KEY, titre TEXT, auteur TEXT)";
+        String CREATE_TABLE = "create table joueur(id_joueur INTEGER PRIMARY KEY, nom TEXT, poste TEXT)";
         db.execSQL(CREATE_TABLE);
     }
 

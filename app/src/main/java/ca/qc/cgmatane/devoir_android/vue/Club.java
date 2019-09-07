@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import ca.qc.cgmatane.devoir_android.R;
+import ca.qc.cgmatane.devoir_android.donnees.BaseDeDonnees;
 import ca.qc.cgmatane.devoir_android.donnees.JoueurDAO;
 
 public class Club extends AppCompatActivity {
@@ -34,6 +35,9 @@ public class Club extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vue_club);
+
+        BaseDeDonnees.getInstance(getApplicationContext());
+
         afficherToutLesJoueurs();
 
         intentionNaviguerAjouterJoueur = new Intent(this, AjouterJoueur.class);

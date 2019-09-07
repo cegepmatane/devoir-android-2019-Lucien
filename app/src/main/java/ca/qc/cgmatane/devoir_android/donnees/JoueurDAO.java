@@ -1,5 +1,7 @@
 package ca.qc.cgmatane.devoir_android.donnees;
 
+import android.database.Cursor;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,9 +13,12 @@ public class JoueurDAO {
     private static JoueurDAO instance = null;
     protected List<Joueur> listeJoueur;
 
+    private BaseDeDonnees accesseurBaseDeDonnees;
+
     public JoueurDAO() {
+        this.accesseurBaseDeDonnees = BaseDeDonnees.getInstance();
         listeJoueur = new ArrayList<Joueur>();
-        preparerListeJoueur();
+        //preparerListeJoueur();
     }
 
     public static JoueurDAO getInstance() {
@@ -23,12 +28,34 @@ public class JoueurDAO {
         return instance;
     }
 
+    public List<Joueur> listerJoueur() {
+
+        String LISTER_JOUEURS = "SELECT * FROM joueur";
+        Cursor curseur = accesseurBaseDeDonnees.getReadableDatabase().rawQuery(LISTER_JOUEURS, null);
+        this.listeJoueur.clear();
+        Joueur joueur;
+
+        int indexId_joueur = curseur.getColumnIndex("id_joueur");
+        int indexAuteur = curseur.getColumnIndex("nom");
+        int indexTitre = curseur.getColumnIndex("poste");
+
+        for (curseur.moveToFirst();!curseur.isAfterLast();curseur.moveToNext()) {
+            int id_joueur = curseur.getInt(indexId_joueur);
+            String nom = curseur.getString(indexAuteur);
+            String poste = curseur.getString(indexTitre);
+            joueur = new Joueur(nom, poste, id_joueur);
+            this.listeJoueur.add(joueur);
+        }
+
+        return listeJoueur;
+    }
+
     public List<HashMap<String,String>> recupererListeJoueurPourAdapteur() {
 
         List<HashMap<String,String>> listeJoueurPourAdapteur =
                 new ArrayList<HashMap<String, String>>();
 
-        //listerJoueur()
+        listerJoueur();
 
         for (Joueur joueur :
                 listeJoueur) {
