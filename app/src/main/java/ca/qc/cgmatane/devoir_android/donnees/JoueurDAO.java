@@ -78,11 +78,16 @@ public class JoueurDAO {
 
     public void modifierJoueur(Joueur joueur) {
 
-        for (Joueur joueurRecherche :
+        for (Joueur livreRecherche :
                 this.listeJoueur) {
-            if (joueurRecherche.getId_joueur() == joueur.getId_joueur()) {
-                joueurRecherche.setNom(joueur.getNom());
-                joueurRecherche.setPoste(joueur.getPoste());
+            if (livreRecherche.getId_joueur() == joueur.getId_joueur()) {
+                SQLiteDatabase db = accesseurBaseDeDonnees.getWritableDatabase();
+                SQLiteStatement query = db.compileStatement("UPDATE joueur SET nom = ?, poste = ? " +
+                        "WHERE id_joueur = ?");
+                query.bindString(1, joueur.getNom());
+                query.bindString(2, joueur.getPoste());
+                query.bindString(3, joueur.getId_joueur() + "");
+                query.execute();
             }
         }
     }
