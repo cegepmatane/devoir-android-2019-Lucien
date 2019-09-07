@@ -1,6 +1,8 @@
 package ca.qc.cgmatane.devoir_android.donnees;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -90,7 +92,11 @@ public class JoueurDAO {
     }
 
     public void ajouterJoueur(Joueur joueur) {
-        listeJoueur.add(joueur);
+        SQLiteDatabase db = accesseurBaseDeDonnees.getWritableDatabase();
+        SQLiteStatement query = db.compileStatement("INSERT INTO joueur(id_joueur, nom, poste) VALUES(null,?,?)");
+        query.bindString(1, joueur.getNom());
+        query.bindString(2, joueur.getPoste());
+        query.execute();
     }
 
     private void preparerListeJoueur() {
