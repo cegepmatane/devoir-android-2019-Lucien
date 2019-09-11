@@ -44,12 +44,6 @@ public class AjouterJoueur extends AppCompatActivity {
 
     private void enregistrerJoueur() {
 
-        Toast message = Toast.makeText(getApplicationContext(),
-                "Nom " + vueAjouterJoueurChampNom.getText().toString(),
-                Toast.LENGTH_SHORT);
-
-        message.show();
-
         accesseurJoueur = JoueurDAO.getInstance();
 
         accesseurJoueur.ajouterJoueur(new Joueur(vueAjouterJoueurChampNom.getText().toString(),
